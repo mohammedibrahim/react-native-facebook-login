@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, {
+  PropTypes,
+  Component
+}from 'react';
 
 import {
   View,
@@ -69,13 +71,10 @@ class FBLogin extends Component {
   componentWillUnmount(){
     const subscriptions = this.state.subscriptions;
     subscriptions.forEach(subscription => subscription.remove());
-    this.mounted = false;
   }
 
   componentDidMount(){
-    this.mounted = true;
     FBLoginManager.getCredentials((error, data) => {
-      if( !this.mounted ) return;
       if (!error) {
         this.setState({ credentials : data.credentials });
       } else {

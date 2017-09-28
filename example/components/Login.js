@@ -1,7 +1,6 @@
 'use strict';
 var React = require('react');
 var ReactNative = require('react-native');
-var PropTypes = require('prop-types');
 
 var {
   StyleSheet,
@@ -73,7 +72,7 @@ var Login = React.createClass({
 
 var Photo = React.createClass({
   propTypes: {
-    user: PropTypes.shape({}).isRequired,
+    user: React.PropTypes.object.isRequired,
   },
 
   getInitialState: function(){
@@ -132,7 +131,7 @@ var Photo = React.createClass({
 
 var Info = React.createClass({
   propTypes: {
-    user: PropTypes.shape({}).isRequired,
+    user: React.PropTypes.object.isRequired,
   },
 
   getInitialState: function(){
